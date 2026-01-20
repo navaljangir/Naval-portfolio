@@ -1,0 +1,105 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/resume": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "app/routes/home.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/resume": {
+        "id": "routes/resume",
+        "parentId": "root",
+        "file": "app/routes/resume.tsx",
+        "path": "resume",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/Users/tejas/Documents/portfolio/app",
+    "basename": "/",
+    "buildDirectory": "/Users/tejas/Documents/portfolio/build",
+    "future": {
+      "unstable_optimizeDeps": false,
+      "unstable_subResourceIntegrity": false,
+      "unstable_trailingSlashAwareDataRequests": false,
+      "v8_middleware": false,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/resume": {
+        "id": "routes/resume",
+        "parentId": "root",
+        "file": "routes/resume.tsx",
+        "path": "resume"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "allowedActionOrigins": false,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/resume.tsx",
+            "path": "resume"
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
