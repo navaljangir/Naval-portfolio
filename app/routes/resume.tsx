@@ -12,10 +12,10 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Resume() {
   return (
-    <div className="h-screen bg-[var(--color-background)] flex flex-col overflow-hidden">
-      {/* Header - compact */}
+    <div className="min-h-screen bg-[var(--color-background)] flex flex-col">
+      {/* Header */}
       <header className="shrink-0 bg-[var(--color-background)] border-b border-[var(--color-border)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <Link
             to="/"
             className="flex items-center gap-2 text-[var(--color-muted)] hover:text-[var(--color-foreground)] transition-colors group"
@@ -37,7 +37,7 @@ export default function Resume() {
               className="flex items-center gap-2 px-3 py-1.5 text-sm text-[var(--color-muted)] hover:text-[var(--color-foreground)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] hover:bg-[var(--color-card)] rounded-lg transition-all"
             >
               <ExternalLink size={14} />
-              <span className="hidden sm:inline">New Tab</span>
+              <span className="hidden sm:inline">Open</span>
             </a>
             <a
               href="/resume.pdf"
@@ -51,55 +51,13 @@ export default function Resume() {
         </div>
       </header>
 
-      {/* PDF Viewer */}
-      <main className="flex-1 min-h-0 p-4 sm:p-6">
-        <div className="max-w-4xl mx-auto h-full">
-          <div className="relative w-full h-full group">
-            {/* Glow effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--color-gradient-start)]/20 to-[var(--color-gradient-end)]/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* PDF Container */}
-            <div className="relative w-full h-full rounded-xl overflow-hidden border border-[var(--color-border)] bg-[#1a1a1a] shadow-2xl flex flex-col">
-              {/* Title bar */}
-              <div className="shrink-0 flex items-center gap-2 px-4 py-2 bg-[var(--color-card)] border-b border-[var(--color-border)]">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                  <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                  <div className="w-3 h-3 rounded-full bg-[#28c840]" />
-                </div>
-                <div className="flex-1 mx-4">
-                  <div className="max-w-md mx-auto px-3 py-1 rounded-md bg-[var(--color-background)] text-xs text-[var(--color-muted)] text-center truncate">
-                    resume.pdf
-                  </div>
-                </div>
-                <div className="w-[52px]" />
-              </div>
-
-              {/* PDF embed */}
-              <div className="flex-1 min-h-0 bg-[#525659]">
-                <object
-                  data="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                  type="application/pdf"
-                  className="w-full h-full"
-                >
-                  <div className="flex flex-col items-center justify-center h-full gap-4 p-8 text-center">
-                    <p className="text-[var(--color-muted)]">
-                      PDF preview not available in your browser.
-                    </p>
-                    <a
-                      href="/resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-[var(--color-foreground)] text-[var(--color-background)] rounded-lg font-medium hover:opacity-90 transition-opacity"
-                    >
-                      Open PDF
-                    </a>
-                  </div>
-                </object>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* PDF Viewer - Full page embed */}
+      <main className="flex-1">
+        <embed
+          src="/resume.pdf"
+          type="application/pdf"
+          className="w-full h-[calc(100vh-57px)]"
+        />
       </main>
     </div>
   );
