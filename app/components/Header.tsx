@@ -37,12 +37,12 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-1"
+            className="text-sm font-mono tracking-tight hover:opacity-80 transition-opacity flex items-center"
           >
-            <span className="w-7 h-7 rounded-md bg-gradient-to-br from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] flex items-center justify-center text-sm font-bold text-black">
-              N
-            </span>
-            <span className="text-[var(--color-muted)]">K</span>
+            <span className="text-[var(--color-gradient-start)]">~</span>
+            <span className="text-[var(--color-muted)]">/</span>
+            <span className="text-[var(--color-foreground)]">nk</span>
+            <span className="w-1.5 h-4 bg-[var(--color-foreground)] ml-0.5 animate-pulse" />
           </Link>
 
           {/* Desktop Navigation */}

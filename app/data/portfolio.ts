@@ -49,12 +49,14 @@ export const experience = [
   {
     company: "Frontpage",
     badge: "YC S21",
+    website: "https://front.page",
     role: "Software Engineer",
     location: "Bangalore, India",
     period: "April 2025 - Present",
     sections: [
       {
         title: "EQHQ – New Product Development",
+        website: "https://eqhq.ai",
         highlights: [
           "Developed the EQHQ frontend using React Router 7 (SSR), Zustand, and React Query, achieving page loads of <300ms on core routes and <400ms on data-heavy views.",
           "Built responsive, accessible UI using shadcn/ui, Radix, and Tailwind, improving layout stability and mobile usability across breakpoints.",
@@ -72,6 +74,7 @@ export const experience = [
       },
       {
         title: "FrontPage Platform Revamp",
+        website: "https://front.page",
         highlights: [
           "Migrated the core platform to React Router 7 (SSR) with Redux and React Query, improving routing performance by ~35–40% and reducing bundle fragmentation.",
           "Optimized Core Web Vitals (LCP, FID, CLS), achieving 98+ Lighthouse scores and significantly improving first-render performance across key routes.",

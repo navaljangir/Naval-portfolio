@@ -35,7 +35,15 @@ export function Experience() {
               {/* Company header */}
               <div className="mb-6">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <h3 className="text-xl font-semibold">{exp.company}</h3>
+                  <a
+                    href={exp.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-semibold hover:text-[var(--color-gradient-start)] transition-colors flex items-center gap-2 group"
+                  >
+                    {exp.company}
+                    <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
                   {exp.badge && (
                     <span className="px-2 py-0.5 text-xs font-medium bg-orange-500/20 text-orange-400 rounded">
                       {exp.badge}
@@ -64,9 +72,22 @@ export function Experience() {
                     key={sectionIndex}
                     className="p-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-card)]"
                   >
-                    <h4 className="font-medium mb-3 text-[var(--color-foreground)]">
-                      {section.title}
-                    </h4>
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-medium text-[var(--color-foreground)]">
+                        {section.title}
+                      </h4>
+                      {section.website && (
+                        <a
+                          href={section.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-xs text-[var(--color-muted)] hover:text-[var(--color-gradient-start)] transition-colors"
+                        >
+                          <ExternalLink size={12} />
+                          <span>Visit</span>
+                        </a>
+                      )}
+                    </div>
                     <ul className="space-y-2">
                       {section.highlights.map((highlight, highlightIndex) => (
                         <li
