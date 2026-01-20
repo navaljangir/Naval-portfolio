@@ -75,13 +75,27 @@ export default function Resume() {
                 <div className="w-[52px]" />
               </div>
 
-              {/* PDF iframe */}
+              {/* PDF embed */}
               <div className="flex-1 min-h-0 bg-[#525659]">
-                <iframe
-                  src="/resume.pdf#toolbar=0&navpanes=0&view=FitH"
-                  className="w-full h-full border-0"
-                  title="Resume"
-                />
+                <object
+                  data="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  type="application/pdf"
+                  className="w-full h-full"
+                >
+                  <div className="flex flex-col items-center justify-center h-full gap-4 p-8 text-center">
+                    <p className="text-[var(--color-muted)]">
+                      PDF preview not available in your browser.
+                    </p>
+                    <a
+                      href="/resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-[var(--color-foreground)] text-[var(--color-background)] rounded-lg font-medium hover:opacity-90 transition-opacity"
+                    >
+                      Open PDF
+                    </a>
+                  </div>
+                </object>
               </div>
             </div>
           </div>
