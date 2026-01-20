@@ -11,6 +11,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Resume() {
+  const pdfUrl = "https://naval-portfolio-seven.vercel.app/resume.pdf";
+  const googleDocsUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+
   return (
     <div className="min-h-screen bg-[var(--color-background)] flex flex-col">
       {/* Header */}
@@ -51,12 +54,12 @@ export default function Resume() {
         </div>
       </header>
 
-      {/* PDF Viewer - Full page embed */}
+      {/* PDF Viewer using Google Docs */}
       <main className="flex-1">
-        <embed
-          src="/resume.pdf"
-          type="application/pdf"
-          className="w-full h-[calc(100vh-57px)]"
+        <iframe
+          src={googleDocsUrl}
+          className="w-full h-[calc(100vh-57px)] border-0"
+          title="Resume"
         />
       </main>
     </div>
