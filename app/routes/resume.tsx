@@ -15,10 +15,10 @@ export default function Resume() {
   const googleDocsUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
 
   return (
-    <div className="min-h-screen bg-[var(--color-background)] flex flex-col">
+    <div className="h-screen bg-[var(--color-background)] flex flex-col overflow-hidden">
       {/* Header */}
       <header className="shrink-0 bg-[var(--color-background)] border-b border-[var(--color-border)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between">
           <Link
             to="/"
             className="flex items-center gap-2 text-[var(--color-muted)] hover:text-[var(--color-foreground)] transition-colors group"
@@ -54,13 +54,41 @@ export default function Resume() {
         </div>
       </header>
 
-      {/* PDF Viewer using Google Docs */}
-      <main className="flex-1">
-        <iframe
-          src={googleDocsUrl}
-          className="w-full h-[calc(100vh-57px)] border-0"
-          title="Resume"
-        />
+      {/* PDF Viewer */}
+      <main className="flex-1 min-h-0 p-4 sm:p-6">
+        <div className="max-w-4xl mx-auto h-full">
+          <div className="relative w-full h-full group">
+            {/* Glow effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--color-gradient-start)]/20 to-[var(--color-gradient-end)]/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* PDF Container */}
+            <div className="relative w-full h-full rounded-xl overflow-hidden border border-[var(--color-border)] bg-[#1a1a1a] shadow-2xl flex flex-col">
+              {/* macOS Title bar */}
+              <div className="shrink-0 flex items-center gap-2 px-4 py-2 bg-[var(--color-card)] border-b border-[var(--color-border)]">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                  <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                  <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                </div>
+                <div className="flex-1 mx-4">
+                  <div className="max-w-md mx-auto px-3 py-1 rounded-md bg-[var(--color-background)] text-xs text-[var(--color-muted)] text-center truncate">
+                    resume.pdf
+                  </div>
+                </div>
+                <div className="w-[52px]" />
+              </div>
+
+              {/* PDF iframe with Google Docs viewer */}
+              <div className="flex-1 min-h-0">
+                <iframe
+                  src={googleDocsUrl}
+                  className="w-full h-full border-0"
+                  title="Resume"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
