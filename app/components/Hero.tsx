@@ -3,10 +3,10 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { personalInfo } from "~/data/portfolio";
 
 const techStack = [
-  "React",
+  "Go",
   "TypeScript",
+  "React",
   "Node.js",
-  "OpenAI",
   "PostgreSQL",
   "Kubernetes",
 ];
@@ -50,9 +50,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-sm text-[var(--color-muted)] max-w-md mx-auto mb-6"
         >
-          I craft <span className="text-[var(--color-foreground)]">fast</span>,{" "}
-          <span className="text-[var(--color-foreground)]">scalable</span> web experiences
-          with clean code and pixel-perfect design.
+          I build <span className="text-[var(--color-foreground)]">UPI payment systems</span>,{" "}
+          <span className="text-[var(--color-foreground)]">debug production issues</span> at scale,
+          and ship <span className="text-[var(--color-foreground)]">AI tools</span> that do the digging.
         </motion.p>
 
         {/* Tech Stack Pills */}
@@ -142,14 +142,13 @@ export function Hero() {
               <div className="w-2 h-2 rounded-full bg-[#ff5f57]" />
               <div className="w-2 h-2 rounded-full bg-[#febc2e]" />
               <div className="w-2 h-2 rounded-full bg-[#28c840]" />
-              <span className="ml-2 text-[10px] text-[var(--color-muted)]">api.ts</span>
+              <span className="ml-2 text-[10px] text-[var(--color-muted)]">upi.go</span>
             </div>
             <pre className="p-3 text-[10px] font-mono text-[var(--color-muted)] overflow-x-auto">
-<code>{`const response = await openai.chat.completions.create({
-  model: "gpt-4",
-  messages: [{ role: "user", content: prompt }],
-  stream: true,
-});`}</code>
+<code>{`token, err := s.upi.CreateNFCToken(ctx, deviceID)
+if err != nil {
+    return fmt.Errorf("tap & pay: %w", err)
+}`}</code>
             </pre>
           </div>
         </motion.div>

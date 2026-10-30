@@ -38,14 +38,14 @@ export function About() {
           className="flex flex-wrap gap-4 text-sm text-[var(--color-muted)]"
         >
           <a
-            href="https://front.page"
+            href="https://www.kreditbee.in"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-gradient-start)]/50 transition-colors group"
           >
             <Briefcase size={14} />
-            <span>Frontpage</span>
-            <span className="text-[var(--color-gradient-start)]">(YC S21)</span>
+            <span>KreditBee</span>
+            <span className="text-[var(--color-gradient-start)]">(UPI Team)</span>
             <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
 
