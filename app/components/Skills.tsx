@@ -7,6 +7,7 @@ const skillCategories = [
   { key: "backend" as const, label: "Backend", icon: "[ ]" },
   { key: "databases" as const, label: "Databases", icon: "db" },
   { key: "devops" as const, label: "DevOps & Tools", icon: ">>>" },
+  { key: "ai" as const, label: "AI & LLM Tooling", icon: "AI" },
 ];
 
 export function Skills() {

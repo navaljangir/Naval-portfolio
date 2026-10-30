@@ -14,22 +14,22 @@ export interface Project {
 export const personalInfo = {
   name: "Naval Kishor",
   title: "Software Engineer",
-  tagline: "Building performant web experiences with modern technologies",
+  tagline: "Building UPI payment systems, scalable backends, and AI debugging tools",
   email: "jangirnaval392003@gmail.com",
   phone: "+91-9697601000",
-  location: "India",
+  location: "Bangalore, India",
   social: {
     github: "https://github.com/navaljangir",
     linkedin: "https://linkedin.com/in/nvl-kishor",
     leetcode: "https://leetcode.com/nvl_kishor",
   },
-  about: `I build fast, scalable web applications that users love. Currently shipping features at Frontpage (YC S21), working across the full stack — from SSR-optimized React frontends to real-time backend systems.
+  about: `I'm a software engineer on the UPI team at KreditBee, building payment systems that run at scale. I built NPCI's UPI Tap & Pay end-to-end (Go backend, Android, React frontend, database schema) as an NPCI launch partner, shipped mandate interoperability, and implemented SIM-based silent mobile verification.
 
-I enjoy both sides: crafting responsive UIs with sub-300ms loads, and architecting backend services with AI integrations, data pipelines, and Kubernetes infrastructure. Turning complex problems into elegant solutions is what drives me.`,
+I enjoy the debugging side as much as the building side. I tracked down a primary-replica lag issue that had affected ~48,000 users, fixed a token-invalidation bug failing transactions for hundreds of users daily, and built AI/LLM tools that let AI agents investigate production issues, cutting my team's debugging time from ~2 hours to ~10 minutes. Previously at Frontpage (YC S21), I built an AI-powered equity research product across the stack.`,
 };
 
 export const skills = {
-  languages: ["C++", "JavaScript", "TypeScript", "SQL"],
+  languages: ["Go (Golang)", "C++", "TypeScript", "JavaScript", "SQL"],
   frontend: [
     "React",
     "React Router 7",
@@ -40,19 +40,49 @@ export const skills = {
     "Radix UI",
     "TailwindCSS",
   ],
-  backend: ["Node.js", "Express", "REST APIs", "WebSockets", "OpenAI APIs"],
-  databases: ["PostgreSQL", "MySQL", "Redis"],
-  devops: ["Docker", "Kubernetes", "CI/CD", "Prisma", "Amplitude Analytics"],
+  backend: ["Node.js", "Express", "REST APIs", "WebSockets", "Microservices"],
+  databases: ["PostgreSQL", "MySQL (Amazon Aurora)", "Redis", "ProxySQL"],
+  devops: ["AWS (EKS, SQS, SNS)", "Docker", "Kubernetes", "CI/CD", "Prisma", "Amplitude Analytics"],
+  ai: ["OpenAI APIs", "RAG", "Vector Embeddings", "MCP-style AI Tooling"],
 };
 
 export const experience = [
+  {
+    company: "KreditBee",
+    badge: null,
+    website: "https://www.kreditbee.in",
+    role: "Software Engineer – UPI Team",
+    location: "Bangalore, India",
+    period: "January 2026 - Present",
+    sections: [
+      {
+        title: "UPI Payments",
+        website: null,
+        highlights: [
+          "Designed and built NPCI's UPI Tap & Pay end-to-end across Android, Go backend, React frontend and database schema, enabling NFC payments at POS terminals without internet on the user's phone. Shipped as an NPCI launch partner.",
+          "Built Mandate Interoperability end-to-end, enabling users to transfer existing UPI mandates from other payment apps into KreditBee.",
+          "Implemented Silent Mobile Verification using network-based SIM verification through a PSP and telecom aggregator, removing user action from verification, and refactored the onboarding experience to reduce drop-offs.",
+          "Built the Dynamic Cohort engine for risk decisions, rewards and nudges, letting risk, rewards and marketing teams define cohort rules themselves instead of a custom engineering build for every new cohort.",
+        ],
+      },
+      {
+        title: "Debugging, Reliability & AI Tooling",
+        website: null,
+        highlights: [
+          "Investigated logs and code to find and fix a primary-replica lag issue, where replica reads occurred before recent writes were replicated. The issue had affected approximately 48,000 users over 1.5 years. Built a ProxySQL simulator of the production Aurora writer/reader setup with configurable lag to reproduce these failures locally.",
+          "Built MCP-style AI debugging tools (KubeSense and Redash CLIs over internal inspection and query APIs, plus a production proxy) that let AI agents investigate production issues, cutting debugging time for the 10-person UPI team from ~2 hours to ~10 minutes.",
+          "Diagnosed and fixed a Google Ad ID token-invalidation bug that caused every transaction to fail for ~600–700 users per day, plus 300–400 daily UPI Lite registration failures.",
+        ],
+      },
+    ],
+  },
   {
     company: "Frontpage",
     badge: "YC S21",
     website: "https://front.page",
     role: "Software Engineer",
     location: "Bangalore, India",
-    period: "April 2025 - Present",
+    period: "April 2025 - January 2026",
     sections: [
       {
         title: "EQHQ – New Product Development",
@@ -65,6 +95,7 @@ export const experience = [
       },
       {
         title: "Platform & Backend Engineering",
+        website: null,
         highlights: [
           "Built a multi-turn conversational AI backend with thread-based message persistence, integrating OpenAI Chat Completion APIs with streaming and context management.",
           "Designed shareable URL system with access control and optimized price history pipeline via third-party provider integration, achieving significant cost savings.",
@@ -190,7 +221,6 @@ export const projects: Project[] = [
 
 export const education = {
   institution: "Vellore Institute of Technology",
-  location: "Bhopal, Madhya Pradesh",
   degree: "Bachelor of Technology",
   branch: "Computer Science and Engineering",
   gpa: "8.87",
